@@ -1,0 +1,12 @@
+Package: kernelgon
+Title: kernal density estimated polygons
+Version: 0.0.0.9000
+Authors@R: person("Bret", "Beheim", email = "beheim@gmail.com", role = c("aut", "cre"))
+Description: The function kernelgon will calculate and plot polygons based on a collection of points stored as an n by 2 matrix.
+Depends: R (>= 3.3.2),
+  ks,
+  concaveman,
+  igraph
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
