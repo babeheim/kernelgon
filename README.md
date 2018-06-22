@@ -30,34 +30,25 @@ The package and function `kernelgon` simply combines the kernel density estimati
 
 ```{r}
 
-d <- data.frame(x = rnorm(100, 0, 1), y = rnorm(100, 100, 5))
+d <- data.frame(x = rnorm(500, 0, 1), y = rnorm(500, 100, 5))
 
 plot(d)
-kernelgon(d)
+kernelgon(d, lty = 2)
 
 ```
 
-For important theoretical reasons, the default highest-density interval is 89%, implying about that many observations should fall within this area. This can be changed to any probability interval by the `prob` argument.
-
-```
-plot(d)
-kernelgon(d, prob = 0.5)
-kernelgon(d, prob = 0.95)
-
-```
-
-Because `kernelgon` works exactly like `polygon`, it accepts any of the normal arguments and is extremely flexible.
+For important theoretical reasons, the default highest-density interval is 89%, implying about that many observations should fall within this area. This can be changed to any probability interval by the `prob` argument. Because `kernelgon` works exactly like `polygon`, it accepts any of the normal arguments and is extremely flexible.
 
 ```
 plot(d)
-kernelgon(d, prob = 0.5, lty = 2, border = "blue")
-kernelgon(d, prob = 0.95, lty = 3, border = "red")
+kernelgon(d, prob = 0.5, lty = 2, border = "blue", lwd = 2)
+kernelgon(d, prob = 0.95, lty = 3, border = "red", lwd = 2)
 
 ```
 
 The `res` argument controls the line resolution; too small and the lines look jagged, but too large and the polygon loses detail.
 
-One nice thing about this is that it is not fooled by bimodal distributions, 
+The `kernelgon` function can handle unusually-shaped, multi-peak probability landscapes. Here is an example: 
 
 ```{r}
 
